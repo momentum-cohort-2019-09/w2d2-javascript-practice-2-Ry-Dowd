@@ -46,9 +46,9 @@ function minimum(array) {
     if (array.length === 0){
         return undefined
     }
-    let min = array[0]
+    let min = null
     for (let index of array){
-        if (index < min) {
+        if (index < min || min === null) {
             min = index
         }
     }
