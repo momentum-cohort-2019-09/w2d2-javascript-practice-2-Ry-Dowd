@@ -79,24 +79,15 @@ function minimum(array) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 function selectionSort(array) {
-    let base = []
-    base = array.slice(0)
+    let base = array.slice(0)
     let sorted = []
     while (base.length > 0){
-        let min = null
-        let index = 0
-        for (let i = 0; i< base.length; i++){
-            if ((min === null) || (base[i]<min)){
-                min = base[i]
-                index = i
-            }
-        }
-        let temp = []
-        temp = base.splice(index,1)
+        let min = minimum(base)
+        let index = base.indexOf(min)
+        let temp = base.splice(index,1)
         sorted.push(temp[0])
     }
-    return sorted
-    
+    return sorted 
 }
 
 // 7. Create a function called `textList` that takes an array and joins its elements
